@@ -1,22 +1,18 @@
-.App {
-  text-align: center;
+.search{
+  border: solid 1px black;
+  margin-bottom: 30px;
+  border-radius: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
+.submit{
+  border-style: none;
+  background-color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav{
+  height : 3em ;
 }
 
-.App-link {
-  color: #09d3ac;
+.barre_recherche{
+  margin-top: 0.5em;
 }

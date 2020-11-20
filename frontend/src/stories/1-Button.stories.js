@@ -1,6 +1,8 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Button } from '@storybook/react/demo';
+import Page from '../App.js';
+
 
 export default {
   title: 'Button',
@@ -15,3 +17,8 @@ export const emoji = () => (
     </span>
   </Button>
 );
+
+export const page = () => (
+  <Page />
+);
+
