@@ -1,6 +1,9 @@
 import React from 'react';
 import Outil1 from './Outil1';
 import Outil2 from './Outil2';
+import Outil3 from './Outil3';
+import Outil4 from './Outil4';
+
 //import logo from './logo.svg';
 import './App.css';
 
@@ -43,6 +46,10 @@ class DashBorad extends React.Component{
               <h4>Votre Dashboard</h4>
               <Outil1/>
               <Outil2/>
+              <Outil3/>
+              <Outil4/>
+
+
           </div>
       );
   }
