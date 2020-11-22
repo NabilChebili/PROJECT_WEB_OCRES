@@ -14,6 +14,6 @@ Inspirez-vous des grands repos open sources qui existent sur github. Les informa
 
 Intaller Bootstrap : npm install react-bootstrap bootstrap
 
-Utilisation StoryBook : npx sb init , npm run storybook
+Utilisation StoryBook : c , npm run storybook
 
 Recharts : npm install recharts

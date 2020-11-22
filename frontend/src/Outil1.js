@@ -1,9 +1,14 @@
 import React from 'react';
-import './Outils.css';
+import './Outil1.css';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis} from 'recharts';
 
 
-const data = [{name: 'Lundi', uv: 5, pv: 3, amt: 2400},{name: 'Mardi', uv: 10, pv: 2400, amt: 2400}];
+const data = [{name: 'Lundi', uv: 5, pv: 3, amt: 2400},
+              {name: 'Mardi', uv: 10, pv: 2400, amt: 2400},
+              {name: 'Mercredi', uv: 10, pv: 2400, amt: 2400},
+              {name: 'Jeudi', uv: 10, pv: 2400, amt: 2400},
+              {name: 'Vendredi', uv: 10, pv: 2400, amt: 2400},
+              {name: 'Samedi', uv: 10, pv: 2400, amt: 2400}];
 
 
 class Outil1 extends React.Component{
@@ -34,3 +39,4 @@ class Outil1 extends React.Component{
 }
 
 export default Outil1;
+
