@@ -33,7 +33,7 @@ const CustomTooltip = ({ active, payload, label }) => {
   if (active) {
     return (
       <div className="custom-tooltip">
-        <p className="label">{`${label} : ${payload[0].value}`}</p>
+        <p  className="label texte">{`${label} : ${payload[0].value}`}</p>
       </div>
     );
   }
@@ -47,9 +47,9 @@ export default class Example extends PureComponent {
   render() {
     return (
     <div>
-    <h5>  Profit par mois par employé : </h5>
+    <h5 class="texte">  Profit par mois par employé : </h5>
       <BarChart
-        width={1000}
+        width={400}
         height={300}
         data={data}
         margin={{

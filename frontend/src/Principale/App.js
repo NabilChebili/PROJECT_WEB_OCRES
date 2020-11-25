@@ -17,14 +17,16 @@ class Toolbar extends React.Component{
   }
 
   render(){
-      return (           
-          <div class="d-flex justify-content-between nav">
-              <h2 class="p-2"> Bienvenue { this.state.user } </h2>
-              <form class="p-2 barre_recherche " method="POST" action="index.html" >
-								<input type="search" required class="search"/>
-								<input type="submit" name="submit" value="🔎" class="submit"/>
-							</form>
-          </div>
+      return (    
+          
+        <div class="d-flex justify-content-between nav">
+                <h2 class="p-2 texte"> Bienvenue { this.state.user } </h2>
+                <form class="p-2 barre_recherche " method="POST" action="index.html" >
+                    <input type="search" required class="search"/>
+                    <input type="submit" name="submit" value="🔎" class="submit"/>
+                </form>
+        </div>
+           
       );
   }
 }
@@ -42,13 +44,18 @@ class DashBorad extends React.Component{
 
   render(){
       return (           
-          <div class="container">
-              <h4>Votre Dashboard</h4>
-              <Outil1/>
-              <Outil2/>
-              <Outil3/>
-              <Outil4/>
-
+          <div class="container ">
+                <h4 class="texte">Votre Dashboard</h4>
+                
+                <div class = "outil o2 col-xl-12"><Outil2/></div>
+                
+                <div class="row o14">
+                    <div class = "outil o1 col-xl-6"><Outil1/></div>
+                    
+                    <div class = "outil o4 col-xl-5"><Outil4/></div>
+                    
+                </div>
+                <div class = "outil o3 col-xl-12 "><Outil3/></div>
 
           </div>
       );
@@ -69,6 +76,7 @@ class Page extends React.Component{
   render(){
       return (           
           <div class="">
+              <meta name="viewport" content="initial-scale=0.7"></meta>
                <Toolbar />
                <hr></hr>
                <DashBorad />

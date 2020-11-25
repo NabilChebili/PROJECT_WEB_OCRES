@@ -24,9 +24,9 @@ class Outil1 extends React.Component{
 
     render(){
         return (           
-            <div class=" ">
-                <h6>Vos tâches éffectuées pendant la semaine</h6>
-                <LineChart width={600} height={300} data={data}>
+            <div>
+                <h6 class="texte">Vos tâches éffectuées pendant la semaine</h6>
+                <LineChart width={500} height={300} data={data}>
                     <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                     <CartesianGrid stroke="#ccc" />
                     <XAxis dataKey="name" />

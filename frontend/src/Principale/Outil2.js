@@ -100,7 +100,7 @@ class Outil2 extends React.Component{
         this.codeRemplissage();
         return (           
             <div class=" ">
-                <h6>Votre TODO list</h6>
+                <h6 class="texte">Votre TODO list</h6>
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
