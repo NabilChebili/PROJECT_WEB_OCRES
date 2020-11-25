@@ -68,7 +68,7 @@ class Page extends React.Component{
 
   render(){
       return (           
-          <div class="container">
+          <div class="">
                <Toolbar />
                <hr></hr>
                <DashBorad />

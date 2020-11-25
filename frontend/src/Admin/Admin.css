@@ -1,0 +1,18 @@
+.search{
+  border: solid 1px black;
+  margin-bottom: 30px;
+  border-radius: 15px;
+}
+
+.submit{
+  border-style: none;
+  background-color: white;
+}
+
+.nav{
+  height : 3em ;
+}
+
+.barre_recherche{
+  margin-top: 0.5em;
+}
