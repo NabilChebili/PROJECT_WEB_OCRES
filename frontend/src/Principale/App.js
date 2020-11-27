@@ -5,6 +5,7 @@ import Outil3 from './Outil3';
 import Outil4 from './Outil4';
 import Outil5 from './Outil5';
 import Outil6 from './Outil6';
+import Outil7 from './Outil7';
 
 
 
@@ -63,7 +64,13 @@ class DashBorad extends React.Component{
 
                 <div class = "outil o5 col-xl-12 "><Outil5/></div>
 
-                <div class = "outil o6 col-xl-12 "><Outil6/></div>
+                <div class="row o14">
+                    <div class = "outil o6 col-xl-6"><Outil6/></div>
+                    
+                    <div class = "outil o7 col-xl-5"><Outil7/></div>
+                    
+                </div>
+
           </div>
       );
   }

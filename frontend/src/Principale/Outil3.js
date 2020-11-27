@@ -42,12 +42,11 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 export default class Example extends PureComponent {
-  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/vxq4ep63/';
 
   render() {
     return (
-    <div>
-    <h5 class="texte">  Profit par mois par employé : </h5>
+      <div>
+      <h5 class="texte">  Profit par mois par employé : </h5>
       <BarChart
         width={1000}
         height={400}
