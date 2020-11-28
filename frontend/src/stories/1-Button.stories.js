@@ -1,7 +1,8 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { Button } from '@storybook/react/demo';
-import Page from '../App.js';
+import Page from '../Principale/App.js';
+import Outil1 from '../Principale/Outil1';
 
 
 export default {
@@ -19,6 +20,6 @@ export const emoji = () => (
 );
 
 export const page = () => (
-  <Page />
+  <Outil1 />
 );
 
