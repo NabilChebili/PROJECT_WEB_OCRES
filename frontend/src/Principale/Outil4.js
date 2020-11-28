@@ -13,11 +13,7 @@ const data01 = [
 const COLORS = ['#4C50A4', '#6A8DD1', '#7BC6F0', '#8C64E2', '#182850' ];
 
 
-
-
-
 export default class Example extends PureComponent {
-  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/k9jkog04/';
 
   render() {
     return (
@@ -25,7 +21,14 @@ export default class Example extends PureComponent {
                 <h5 class="texte">Représentation des ventes dans le monde :</h5>
                 <PieChart width={400} height={400}>
                   <Pie
-                    dataKey="value" isAnimationActive={false} data={data01} cx={185} cy={160} outerRadius={120} fill="#8884d8" label
+                    dataKey="value" 
+                    isAnimationActive={false} 
+                    data={data01} 
+                    cx={185} 
+                    cy={160} 
+                    outerRadius={120} 
+                    fill="#8884d8" 
+                    label
                     >
                   
                     {

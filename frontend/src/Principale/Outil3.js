@@ -42,15 +42,14 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 export default class Example extends PureComponent {
-  static jsfiddleUrl = 'https://jsfiddle.net/alidingling/vxq4ep63/';
 
   render() {
     return (
-    <div>
-    <h5 class="texte">  Profit par mois par employé : </h5>
+      <div>
+      <h5 class="texte">  Profit par mois par employé : </h5>
       <BarChart
-        width={400}
-        height={300}
+        width={1000}
+        height={400}
         data={data}
         margin={{
           top: 5, right: 30, left: 20, bottom: 5,
@@ -61,7 +60,7 @@ export default class Example extends PureComponent {
         <YAxis />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
-        <Bar dataKey="profit" barSize={80} fill="#8884d8" />
+        <Bar dataKey="profit" barSize={80} fill="#4C50A4" />
       </BarChart>
       </div>
     );
