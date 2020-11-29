@@ -50,7 +50,7 @@ export default class Example extends PureComponent {
       <h5 class="texte">Répartition des abonnés en fonction de leur âge :</h5>
       <div style={{ width: '95%', height: 300 }}>
         <ResponsiveContainer>
-          <AreaChart
+          <AreaChart  
             data={data}
             margin={{
               top: 10, right: 30, left: 0, bottom: 0,
@@ -58,6 +58,7 @@ export default class Example extends PureComponent {
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
+            
             <YAxis />
             <Tooltip />
             <Area type="monotone" dataKey="18-25" stackId="1" stroke="#8884d8" fill="#8884d8" />
