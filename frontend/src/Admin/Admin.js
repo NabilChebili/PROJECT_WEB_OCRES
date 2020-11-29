@@ -47,20 +47,20 @@ class Board extends React.Component{
       return (           
             <div class="container">
                 <h4>Voici ici votre Page ADMIN</h4>
-                <p>Ici vous pouvez modifier les données des différentes outil</p>   
-                <AdOutil1/>
+                <p>Ici vous pouvez modifier les données des différents outils</p>   
+                <div class="outil"><AdOutil1/></div>
                 <br></br>
-                <AdOutil2/>
+                <div class="outil"><AdOutil2/></div>
                 <br></br>
-                <AdOutil3/>
+                <div class="outil"><AdOutil3/></div>
                 <br></br>
-                <AdOutil4/>
+                <div class="outil"><AdOutil4/></div>
                 <br></br>
-                <AdOutil5/>
+                <div class="outil"><AdOutil5/></div>
                 <br></br>
-                <AdOutil6/>
+                <div class="outil"><AdOutil6/></div>
                 <br></br>
-                <AdOutil7/>
+                <div class="outil"><AdOutil7/></div>
 
             </div>
         );
