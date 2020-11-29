@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { RadialBarChart, RadialBar, PolarAngleAxis, Legend, Tooltip, fontSize} from 'recharts';
+import { RadialBarChart, RadialBar, PolarAngleAxis,} from 'recharts';
 
 const data = [
   {

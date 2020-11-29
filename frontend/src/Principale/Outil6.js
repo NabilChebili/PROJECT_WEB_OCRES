@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sector, Cell, PieChart, Pie } from 'recharts';
+import { Cell, PieChart, Pie } from 'recharts';
 
 const GaugeChart = () => {
         const width = 400;
