@@ -1,3 +1,5 @@
+
+
 body{
   background-image: url(/995489.jpg);
   background-position: fixed;
@@ -9,7 +11,7 @@ body{
   background-attachment: fixed;
   height:100%;
   width:100%;
- 
+  min-width: 600px;
 }
 
 .search{
@@ -100,7 +102,7 @@ body{
 }
 
 .o67{
-  margin: 0 auto;
+ margin: 0 auto;
   min-width: 506px;
   margin: 1em;
 }
