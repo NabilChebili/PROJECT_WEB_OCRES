@@ -65,11 +65,12 @@ class DashBorad extends React.Component{
                 <div class = "outil o5 col-xl-12 "><Outil5/></div>
 
                 <div class="row o67">
-                    <div class = "outil o6 col-xl-5"><Outil6/></div>
+                    <div class = "outil o6 col-xl-4"><Outil6/></div>
                     
-                    <div class = "outil o7 col-xl-5"><Outil7/></div>
+                    <div class = "outil o7 col-xl-3"><Outil7/></div>
                     
                 </div>
+                <br></br>
 
           </div>
       );
@@ -90,7 +91,7 @@ class Page extends React.Component{
   render(){
       return (           
           <div class="">
-              <meta name="viewport" content="initial-scale=0.7"></meta>
+              <meta name="viewport" content="width=device-width, initial-scale=0.7"></meta>
                <Toolbar />
                <hr></hr>
                <DashBorad />
