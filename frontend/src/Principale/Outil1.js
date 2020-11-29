@@ -1,6 +1,6 @@
 import React from 'react';
 import './Outil1.css';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis} from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis,ResponsiveContainer} from 'recharts';
 
 
 const data = [{name: 'Lundi', uv: 5, pv: 3, amt: 2400},
@@ -26,12 +26,16 @@ class Outil1 extends React.Component{
         return (           
             <div>
                 <h6 class="texte">Vos tâches éffectuées pendant la semaine</h6>
+               <div style={{ width: '95%', height: 300 }}>
+               <ResponsiveContainer>
                 <LineChart width={500} height={300} data={data}>
                     <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                     <CartesianGrid stroke="#ccc" />
                     <XAxis dataKey="name" />
                     <YAxis />
                 </LineChart>
+              </ResponsiveContainer>
+              </div>
                 
             </div>
         );
