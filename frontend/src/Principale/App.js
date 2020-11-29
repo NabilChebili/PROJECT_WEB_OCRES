@@ -64,8 +64,8 @@ class DashBorad extends React.Component{
 
                 <div class = "outil o5 col-xl-12 "><Outil5/></div>
 
-                <div class="row o14">
-                    <div class = "outil o6 col-xl-6"><Outil6/></div>
+                <div class="row o67">
+                    <div class = "outil o6 col-xl-5"><Outil6/></div>
                     
                     <div class = "outil o7 col-xl-5"><Outil7/></div>
                     

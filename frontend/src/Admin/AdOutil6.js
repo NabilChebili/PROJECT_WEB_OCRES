@@ -1,7 +1,7 @@
 import React from 'react';
-import './AdOutil7.css';
+import './AdOutil6.css';
 
-class AdOutil7 extends React.Component{
+class AdOutil6 extends React.Component{
 
     constructor(props){
         super(props);
@@ -16,7 +16,7 @@ class AdOutil7 extends React.Component{
         return (           
             <div class="">
 
-            <h5>Outil 7 : Part du marché </h5>
+            <h5>Outil 6 : Epanouissement des salariés </h5>
             <h7>Entrez un pourcentage</h7>
             <br></br>
             <form>
@@ -30,4 +30,4 @@ class AdOutil7 extends React.Component{
     }
 }
 
-export default AdOutil7;
+export default AdOutil6;

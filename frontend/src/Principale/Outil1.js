@@ -4,11 +4,11 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis} from 'recharts';
 
 
 const data = [{name: 'Lundi', uv: 5, pv: 3, amt: 2400},
-              {name: 'Mardi', uv: 10, pv: 2400, amt: 2400},
-              {name: 'Mercredi', uv: 10, pv: 2400, amt: 2400},
-              {name: 'Jeudi', uv: 10, pv: 2400, amt: 2400},
-              {name: 'Vendredi', uv: 10, pv: 2400, amt: 2400},
-              {name: 'Samedi', uv: 10, pv: 2400, amt: 2400}];
+              {name: 'Mardi', uv: 2, pv: 2400, amt: 2400},
+              {name: 'Mercredi', uv: 6, pv: 2400, amt: 2400},
+              {name: 'Jeudi', uv: 8, pv: 2400, amt: 2400},
+              {name: 'Vendredi', uv: 9, pv: 2400, amt: 2400},
+              {name: 'Samedi', uv: 1, pv: 2400, amt: 2400}];
 
 
 class Outil1 extends React.Component{

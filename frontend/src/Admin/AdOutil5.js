@@ -16,7 +16,7 @@ class AdOutil5 extends React.Component{
         return (           
             <div class="">
 
-            <h5>Outil 5 : Epanouissement des salariés </h5>
+            <h5>Outil 5 : Répartition des abonnés en fonction de leur âge </h5>
             <h7>Checker les mois dont vous voulez qu'on voit et entrez leurs valeurs</h7>
             <br></br><br></br>
             <form>

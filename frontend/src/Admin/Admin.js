@@ -3,6 +3,9 @@ import AdOutil1 from './AdOutil1';
 import AdOutil2 from './AdOutil2';
 import AdOutil3 from './AdOutil3';
 import AdOutil4 from './AdOutil4';
+import AdOutil5 from './AdOutil5';
+import AdOutil6 from './AdOutil6';
+import AdOutil7 from './AdOutil7';
 
 //import logo from './logo.svg';
 import './Admin.css';
@@ -52,6 +55,12 @@ class Board extends React.Component{
                 <AdOutil3/>
                 <br></br>
                 <AdOutil4/>
+                <br></br>
+                <AdOutil5/>
+                <br></br>
+                <AdOutil6/>
+                <br></br>
+                <AdOutil7/>
 
             </div>
         );
@@ -72,6 +81,7 @@ class PageAdmin extends React.Component{
   render(){
       return (           
           <div class="container">
+            <meta name="viewport" content="initial-scale=0.7"></meta>
                <Toolbar />
                <hr></hr>
                <Board />
