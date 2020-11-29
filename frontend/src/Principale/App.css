@@ -68,27 +68,37 @@ body{
   margin: 0 auto;
   max-width: 400px;
 }
-.o5{
-  height: 400px; 
-  margin: 0 auto;
-  
-}
-.o6{
-  height: 300px; 
-  margin: 0 auto;
-  max-width: 350px;
-}
-.o7{
-  height: 300px; 
-  margin: 0 auto;
-  max-width: 300px;
-}
 
 .o14{
   margin: 0 auto;
   min-width: 506px;
   margin: 1em;
 }
+
+.o5{
+  height: 400px; 
+  margin: 0 auto;
+  margin: 1em;
+}
+
+.o6{
+  
+  height: 300px; 
+  max-width: 350px;
+  
+  margin: 0 auto;
+  margin-bottom: 20px;
+  
+}
+
+.o7{
+  
+  height: 300px; 
+  max-width: 300px;
+  margin: 0 auto;
+  
+}
+
 .o67{
   margin: 0 auto;
   min-width: 506px;

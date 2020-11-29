@@ -13,10 +13,10 @@ export default class Example extends PureComponent {
 
   render() {
     return (
-    <div>
+    <div class="graph">
     <h5 class="texte">  Part du marché : </h5>
       <RadialBarChart 
-        width={599}
+        width={300}
         height={299} 
         cx={130} 
         cy={130} 
