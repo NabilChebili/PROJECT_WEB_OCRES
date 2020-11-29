@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
 
 const data = [
@@ -47,21 +47,25 @@ export default class Example extends PureComponent {
     return (
       <div>
       <h5 class="texte">  Profit par mois par employé : </h5>
-      <BarChart
-        width={1000}
-        height={400}
-        data={data}
-        margin={{
-          top: 5, right: 30, left: 20, bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip content={<CustomTooltip />} />
-        <Legend />
-        <Bar dataKey="profit" barSize={80} fill="#4C50A4" />
-      </BarChart>
+      <div style={{ width: '95%', height: 300 }}>
+        <ResponsiveContainer>
+          <BarChart
+            width={800}
+            height={400}
+            data={data}
+            margin={{
+              top: 5, right: 30, left: 20, bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip content={<CustomTooltip />} />
+            <Legend />
+            <Bar dataKey="profit" barSize={80} fill="#4C50A4" />
+          </BarChart>
+        </ResponsiveContainer>
+        </div>
       </div>
     );
   }
