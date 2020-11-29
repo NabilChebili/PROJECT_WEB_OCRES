@@ -104,7 +104,7 @@ class Outil2 extends React.Component{
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                        <th scope="col">Numéro</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Description</th>
                         <th scope="col">Deadline</th>
                         <th scope="col">Qui</th>
