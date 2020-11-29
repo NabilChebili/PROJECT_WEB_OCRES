@@ -17,8 +17,8 @@ class AdOutil2 extends React.Component{
           <div class="">
 
             <h5>Outil 2 : Votre TODO list </h5>
-            <h7>Checker les jours dont vous voulez qu'on voit et entrez leurs valeurs</h7>
-            <br></br><br></br>
+           
+            <br></br>
             <form>
             <h6>Add :</h6> 
             <text class="text">Description :</text>

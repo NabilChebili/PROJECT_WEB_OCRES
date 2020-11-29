@@ -17,8 +17,8 @@ class AdOutil3 extends React.Component{
             <div class="">
 
             <h5>Outil 3 : Profit par mois par employé </h5>
-            <h7>Checker les jours dont vous voulez qu'on voit et entrez leurs valeurs</h7>
-            <br></br><br></br>
+            
+            <br></br>
             <form>
             <h6>Add :</h6> 
             <text class="text">Nom de l'employé :</text>
