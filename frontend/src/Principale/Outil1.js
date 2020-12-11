@@ -2,13 +2,29 @@ import React from 'react';
 import './Outil1.css';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis,ResponsiveContainer} from 'recharts';
 
+import axios from 'axios';
 
-const data = [{name: 'Lundi', uv: 5, pv: 3, amt: 2400},
-              {name: 'Mardi', uv: 2, pv: 2400, amt: 2400},
-              {name: 'Mercredi', uv: 6, pv: 2400, amt: 2400},
-              {name: 'Jeudi', uv: 8, pv: 2400, amt: 2400},
-              {name: 'Vendredi', uv: 9, pv: 2400, amt: 2400},
-              {name: 'Samedi', uv: 1, pv: 2400, amt: 2400}];
+var dataRecu;
+
+
+
+const data = [];
+
+axios.get('http://localhost:3000/outil1')
+    .then((response) => 
+    {
+        dataRecu = response.data.dataO1;
+        for (let i = 0; i < dataRecu.length; i++) {
+            if(dataRecu[i].visible === true){
+            data.push({name : dataRecu[i].jour,uv : dataRecu[i].taches,pv: 3, amt: 2400});}
+        }
+        console.log(data);
+    })
+    
+
+
+    
+
 
 
 class Outil1 extends React.Component{
@@ -23,6 +39,7 @@ class Outil1 extends React.Component{
     
 
     render(){
+        console.log(data);
         return (           
             <div>
                 <h6 class="texte">Vos tâches éffectuées pendant la semaine</h6>

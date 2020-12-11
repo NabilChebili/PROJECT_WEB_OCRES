@@ -5,6 +5,7 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+var o1Router = require("./routes/outil1");
 
 var app = express();
 
@@ -15,5 +16,20 @@ app.use(cookieParser());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/outil1", o1Router);
+
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+const dbName = "web";
+const dbURL = `mongodb://localhost:27017/${dbName}`;
+
+// Connecting to the database
+mongoose.connect(dbURL,{
+    useNewUrlParser : true
+});
+
+
+
 
 module.exports = app;
