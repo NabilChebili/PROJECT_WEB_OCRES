@@ -22,7 +22,6 @@ app.get('/', async (req, res) => {
 app.put('/', (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     const dataO1 = req.body.data;
-
     for (let i = 0; i < dataO1.length; i++) {
         const dataJ = dataO1[i];
         const jourAjt = new outil1({
