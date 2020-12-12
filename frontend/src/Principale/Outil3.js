@@ -1,7 +1,49 @@
 import React, { PureComponent } from 'react';
+import './Outil3.css';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
+
+import axios from 'axios';
+
+
+class Outil3 extends React.Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            user: "Adrien",
+            data: [],
+        };
+    }
+
+    componentDidMount(){
+        this.retourApi();
+    }
+    
+    retourApi(){
+        try{
+            
+            axios.get('http://localhost:3000/outil3')
+           .then((response) => 
+           {
+            var data = [];    
+            var dataRecu;
+                dataRecu = response.data.dataO1;
+                for (let i = 0; i < dataRecu.length; i++) {
+                    if(dataRecu[i].visible === true){
+                    data.push({name : dataRecu[i].jour,uv : dataRecu[i].taches});}
+                }
+                this.setState({data:data})
+               
+           })
+       }
+       catch(err){
+           console.log(err);
+       }
+    }
+};
+
 
 const data = [
   {
