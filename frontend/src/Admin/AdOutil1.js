@@ -13,24 +13,38 @@ class AdOutil1 extends React.Component{
         this.state = {
             user: "Adrien",
             data : [],
+            err : "",
         };
         
     }
   
     componentDidMount(){
         var datatemp = [];
-        axios.get('http://localhost:3000/outil1')
-                .then((response) => 
-                {       
-                    var dataRecu;
-                    dataRecu = response.data.dataO1;
-                    for (let i = 0; i < dataRecu.length; i++) {
-                        if(dataRecu[i].visible === true){
-                            datatemp.push({jour : dataRecu[i].jour,taches : dataRecu[i].taches,visible : dataRecu[i].taches});
-                        }
+        try{
+            axios.get('http://localhost:3000/outil1')
+            .then((response) => 
+            {       
+                var dataRecu;
+                dataRecu = response.data.dataO1;
+                for (let i = 0; i < dataRecu.length; i++) {
+                    if(dataRecu[i].visible === true){
+                        datatemp.push({jour : dataRecu[i].jour,taches : dataRecu[i].taches,visible : dataRecu[i].taches});
                     }
-                    this.setState({ data : dataRecu})
-                })
+                }
+                this.setState({ data : dataRecu})
+            })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    
+        }
+        catch(err){
+            console.log(err);
+        }
+       
     }
 
     changeVisible(num){
@@ -43,35 +57,63 @@ class AdOutil1 extends React.Component{
     }
 
     changeNombre(num){
-        var mardi = document.getElementById("mardi").value;
+        let jour = 0;
+        if(num === 0)
+        {
+            jour = document.getElementById("lundi").value;
+        }
+        else if(num === 1){
+            jour = document.getElementById("mardi").value;
+        }
+        else if(num === 2){
+            jour = document.getElementById("mercredi").value;
+        }
+        else if(num === 3){
+            jour = document.getElementById("jeudi").value;
+        }
+        else if(num === 4){
+            jour = document.getElementById("vendredi").value;
+        }
+        else if(num === 5){
+            jour = document.getElementById("samedi").value;
+        }
+        
         if(this.state.data.length !== 0 )
         {
             let dataTemp = this.state.data;
-            dataTemp[num].taches = mardi
+            dataTemp[num].taches = jour
             this.setState({data :  dataTemp})
         }
     }
 
     Lundi(){
-        if(this.state.data.length == 0 )
-        {
-            return(
-                <label>
+        
+               /*  <label>
                     <input class="checkbox" type="checkbox" id="lundi" name="lundi" checked></input>
                     <text class="text">Lundi :</text>
                     <input class="checkbox" type="number" name="lundiNum" />
-                </label>
-            )
+                </label> */
+            
+
+        let check = false;
+        let taches = 0;
+        
+        if(this.state.data.length !== 0 )
+        {
+            taches = this.state.data[0].taches;
+            if(this.state.data[0].visible === true)
+            {
+                check = true
+            }
         }
-        else{
-            return(
+        
+        return(
             <label>
-                <input class="checkbox" type="checkbox" id="lundi" name="lundi" checked></input>
+                <input class="checkbox" type="checkbox"  name="lundi" checked={check} onChange={() => this.changeVisible(0)} ></input>
                 <text class="text">Lundi :</text>
-                <input class="checkbox" type="number" name="lundiNum" value={this.state.data[0].taches} />
+                <input type="number" id="lundi" name="lundiNum" placeholder={taches} onChange={() => this.changeNombre(0)}/>
             </label>
-            )
-        }
+        )
 
        
     }
@@ -104,102 +146,135 @@ class AdOutil1 extends React.Component{
     }
 
     Mercredi(){
-        if(this.state.data.length == 0 )
+        let check = false;
+        let taches = 0;
+        
+        if(this.state.data.length !== 0 )
         {
-            return(
-                <label>
-                    <input class="checkbox" type="checkbox" id="lundi" name="lundi" checked></input>
-                    <text class="text">Lundi :</text>
-                    <input class="checkbox" type="number" name="lundiNum" />
-                </label>
-            )
+            taches = this.state.data[2].taches;
+            if(this.state.data[2].visible === true)
+            {
+                check = true
+            }
         }
-        else{
-            return(
+        
+        return(
             <label>
-                <input class="checkbox" type="checkbox" id="lundi" name="lundi" checked></input>
-                <text class="text">Lundi :</text>
-                <input class="checkbox" type="number" name="lundiNum" value={this.state.data[0].taches} />
+                <input class="checkbox" type="checkbox"  name="mercredi" checked={check} onChange={() => this.changeVisible(2)} ></input>
+                <text class="text">Mercredi :</text>
+                <input type="number" id="mercredi" name="mercrediNum" placeholder={taches} onChange={() => this.changeNombre(2)}/>
             </label>
-            )
-        }
+        )
 
        
     }
 
     Jeudi(){
-        if(this.state.data.length == 0 )
+        let check = false;
+        let taches = 0;
+        
+        if(this.state.data.length !== 0 )
         {
-            return(
-                <label>
-                    <input class="checkbox" type="checkbox" id="lundi" name="lundi" checked></input>
-                    <text class="text">Lundi :</text>
-                    <input class="checkbox" type="number" name="lundiNum" />
-                </label>
-            )
+            taches = this.state.data[3].taches;
+            if(this.state.data[3].visible === true)
+            {
+                check = true
+            }
         }
-        else{
-            return(
+        
+        return(
             <label>
-                <input class="checkbox" type="checkbox" id="lundi" name="lundi" checked></input>
-                <text class="text">Lundi :</text>
-                <input class="checkbox" type="number" name="lundiNum" value={this.state.data[0].taches} />
+                <input class="checkbox" type="checkbox"  name="jeudi" checked={check} onChange={() => this.changeVisible(3)} ></input>
+                <text class="text">Jeudi :</text>
+                <input type="number" id="jeudi" name="jeudiNum" placeholder={taches} onChange={() => this.changeNombre(3)}/>
             </label>
-            )
-        }
+        )
 
        
     }
 
     Vendredi(){
-        if(this.state.data.length == 0 )
+        let check = false;
+        let taches = 0;
+        
+        if(this.state.data.length !== 0 )
         {
-            return(
-                <label>
-                    <input class="checkbox" type="checkbox" id="lundi" name="lundi" checked></input>
-                    <text class="text">Lundi :</text>
-                    <input class="checkbox" type="number" name="lundiNum" />
-                </label>
-            )
+            taches = this.state.data[4].taches;
+            if(this.state.data[4].visible === true)
+            {
+                check = true
+            }
         }
-        else{
-            return(
+        
+        return(
             <label>
-                <input class="checkbox" type="checkbox" id="lundi" name="lundi" checked></input>
-                <text class="text">Lundi :</text>
-                <input class="checkbox" type="number" name="lundiNum" value={this.state.data[0].taches} />
+                <input class="checkbox" type="checkbox"  name="vendredi" checked={check} onChange={() => this.changeVisible(4)} ></input>
+                <text class="text">Vendredi :</text>
+                <input type="number" id="vendredi" name="vendrediNum" placeholder={taches} onChange={() => this.changeNombre(4)}/>
             </label>
-            )
-        }
+        )
 
        
     }
 
     Samedi(){
-        if(this.state.data.length == 0 )
+        let check = false;
+        let taches = 0;
+        
+        if(this.state.data.length !== 0 )
         {
-            return(
-                <label>
-                    <input class="checkbox" type="checkbox" id="lundi" name="lundi" checked></input>
-                    <text class="text">Lundi :</text>
-                    <input class="checkbox" type="number" name="lundiNum" />
-                </label>
-            )
+            taches = this.state.data[5].taches;
+            if(this.state.data[5].visible === true)
+            {
+                check = true
+            }
         }
-        else{
-            return(
+        
+        return(
             <label>
-                <input class="checkbox" type="checkbox" id="lundi" name="lundi" checked></input>
-                <text class="text">Lundi :</text>
-                <input class="checkbox" type="number" name="lundiNum" value={this.state.data[0].taches} />
+                <input class="checkbox" type="checkbox"  name="samedi" checked={check} onChange={() => this.changeVisible(5)} ></input>
+                <text class="text">Samedi :</text>
+                <input type="number" id="samedi" name="samediNum" placeholder={taches} onChange={() => this.changeNombre(5)}/>
             </label>
-            )
-        }
+        )
 
        
     }
   
+    majBDD(){
 
+        
+
+        fetch('http://localhost:3000/outil1', {
+        method: 'DELETE',
+        mode:"cors",
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
+            "Content-Type":"application/json"
+          },
+        
+        })
+        .then(function (response) {
+            axios({
+                method: 'put',
+                url: 'http://localhost:3000/outil1',
+                data: this.state.data
+            })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+       
+    }
     
 
     render(){
@@ -209,38 +284,24 @@ class AdOutil1 extends React.Component{
           <div>
               
               <h5>Outil 1 : Vos tâches éffectuées pendant la semaine </h5>
+              <h4 class="bg-danger">{this.state.err}</h4>
               <h7>Checker les jours dont vous voulez qu'on voit et entrez leurs valeurs</h7>
               <form>
                   {this.Lundi()}
                   <br></br>
                   {this.Mardi()}
                   <br></br>
-                  <label>
-                      <input class="checkbox" type="checkbox" id="mercredi" name="mercredi" checked></input> 
-                      <text class="text">Mercredi :</text>
-                      <input type="number" name="mercrediNum" />
-                  </label>
+                  {this.Mercredi()}
                   <br></br>
-                  <label>
-                      <input class="checkbox" type="checkbox" id="jeudi" name="jeudi" checked></input>
-                      <text class="text">Jeudi :</text>
-                      <input type="number" name="jeudiNum" />
-                  </label>
+                  {this.Jeudi()}
                   <br></br>
-                  <label>
-                      <input class="checkbox" type="checkbox" id="vendredi" name="vendredi" checked></input>
-                      <text class="text">Vendredi :</text>
-                      <input type="number" name="vendrediNum" />
-                  </label>
+                  {this.Vendredi()}
                   <br></br>
-                  <label>
-                      <input class="checkbox" type="checkbox" id="samedi" name="samedi" checked></input>
-                      <text class="text">Samedi :</text>
-                      <input type="number" name="samediNum" />
-                  </label>
+                  {this.Samedi()}
                   <br></br>
-                  <input type="submit" value="Envoyer" />
+                  
               </form>
+              <button value="Envoyer" onClick={() => this.majBDD()}>Envoyer</button>
   
           </div>
         );

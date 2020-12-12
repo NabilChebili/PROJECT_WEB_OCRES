@@ -1,9 +1,12 @@
 var express = require('express');
-var router = express.Router();
+var app = express();
 const outil1 = require('../models/outil1')
 
+const cors = require('cors')
+app.use(cors()) 
+ 
 /* GET users listing. */
-router.get('/', async (req, res) => {
+app.get('/', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     try{
         const dataO1 = await outil1.find();
@@ -16,7 +19,8 @@ router.get('/', async (req, res) => {
 });
 
 /* PUT users listing. */
-router.put('/', (req, res) => {
+app.put('/', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     const dataO1 = req.body.data;
 
     for (let i = 0; i < dataO1.length; i++) {
@@ -47,8 +51,9 @@ router.put('/', (req, res) => {
 
 
 /* DELETE All. */
-router.delete('/', (req, res) => {
-    outil1.deleteMany().then(function(){
+app.delete('/',async (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    const dataO1 = await outil1.deleteMany().then(function(){
         res.status(200).json({
             message: "tout à été supprimé"
         })
@@ -60,4 +65,4 @@ router.delete('/', (req, res) => {
     
 });
 
-module.exports = router;
+module.exports = app;
