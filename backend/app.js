@@ -6,6 +6,7 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var o1Router = require("./routes/outil1");
+var o1Router = require("./routes/outil3");
 
 var app = express();
 
@@ -17,6 +18,7 @@ app.use(cookieParser());
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/outil1", o1Router);
+app.use("/outil3", o1Router);
 
 const mongoose = require('mongoose');
 
