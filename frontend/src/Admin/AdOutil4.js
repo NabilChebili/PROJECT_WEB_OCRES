@@ -111,6 +111,7 @@ class AdOutil4 extends React.Component{
 
     delete(){
         let dataTemp = this.state.data;
+        console.log(dataTemp)
         for (let i = 0; i < dataTemp.length; i++) {
             if(dataTemp[i].name === document.getElementById("nameDelete").value){
                 dataTemp.splice(i,1);
