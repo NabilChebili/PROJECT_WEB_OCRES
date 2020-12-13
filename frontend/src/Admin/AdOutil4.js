@@ -185,7 +185,7 @@ class AdOutil4 extends React.Component{
             <input class="text" type="textarea"  id="nameDelete" />
             <br></br>
             
-            <input type="" value="Envoyer" onClick={() => this.delete()}/>
+            <input type="submit" value="Envoyer" onClick={() => this.delete()}/>
             </form>
 
             </div>

@@ -1,9 +1,29 @@
 import React from 'react';
 import { Cell, PieChart, Pie } from 'recharts';
+import axios from 'axios';
+
+var chartValue = 180;
 
 const GaugeChart = () => {
         const width = 400;
-        const chartValue = 180;
+
+
+try{
+            
+            axios.get('http://localhost:3000/outil6')
+
+           .then((response) => 
+           {
+            chartValue = response.data.dataO1[0].chartValue;
+            console.log(response.data.dataO1[0].chartValue);
+           })
+       }
+       catch(err){
+           console.log(err);
+       }
+
+console.log(chartValue+"coucou")
+
         const colorData = [
             {
                 value: 50, color: '#FF0000'
@@ -46,6 +66,10 @@ const GaugeChart = () => {
                 </g>
             );
         };
+
+
+
+
 
 
         return (
