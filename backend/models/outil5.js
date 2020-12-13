@@ -5,19 +5,19 @@ const outil5Schema = new mongoose.Schema({
         type : String,
         required : true,
     },
-    "18-25" : {
+    valeur1 : {
         type : Number,
         required : true,
-    }
-    "25-45" : {
+    },
+    valeur2 : {
         type : Number,
         required : true,
-    }
-    "45-65" : {
+    },
+    valeur3 : {
         type : Number,
         required : true,
-    }
-    "65+" : {
+    },
+    valeur4 : {
         type : Number,
         required : true,
     }
