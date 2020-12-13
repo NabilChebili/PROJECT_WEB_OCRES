@@ -3,10 +3,12 @@ import { RadialBarChart, RadialBar, PolarAngleAxis,} from 'recharts';
 
 const data = [
   {
-    name: 'osef', pourcentage: 75, fill: '#32CD32',
+    name: 'osef', pourcentage: 75,
   },
+  ];
+const COLORS = ['#32CD32'];
 
-];
+
 
 
 export default class Example extends PureComponent {
@@ -23,6 +25,7 @@ export default class Example extends PureComponent {
         innerRadius={80} 
         barSize={35} 
         data={data}
+        fill={COLORS} 
       >
 
       <RadialBar 
