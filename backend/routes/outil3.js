@@ -1,9 +1,12 @@
 var express = require('express');
-var router = express.Router();
+var app = express();
 const outil3 = require('../models/outil3')
 
+const cors = require('cors')
+app.use(cors()) 
+
 /* GET users listing. */
-router.get('/', async (req, res) => {
+app.get('/', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     try{
         const dataO1 = await outil3.find();
@@ -16,10 +19,8 @@ router.get('/', async (req, res) => {
 });
 
 /* PUT users listing. */
-router.put('/', (req, res) => {
-     res.header("Access-Control-Allow-Origin", "*");
+app.put('/', (req, res) => {
     const dataO1 = req.body.data;
-    res.status(400).json({message: data01})
 
     for (let i = 0; i < dataO1.length; i++) {
         const dataJ = dataO1[i];
@@ -40,16 +41,13 @@ router.put('/', (req, res) => {
     res.status(200).json({
         message:`Tous les employés ont été ajoutés`
     });
-    
-    
-    
-    
 });
 
 
 
+
 /* DELETE All. */
-router.delete('/', (req, res) => {
+app.delete('/', (req, res) => {
     outil3.deleteMany().then(function(){
         res.status(200).json({
             message: "tout à été supprimé"
@@ -62,4 +60,4 @@ router.delete('/', (req, res) => {
     
 });
 
-module.exports = router;
+module.exports = app;

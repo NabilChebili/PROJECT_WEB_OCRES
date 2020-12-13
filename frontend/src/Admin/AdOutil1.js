@@ -243,7 +243,8 @@ class AdOutil1 extends React.Component{
   
     majBDD(){
 
-        
+        let data1 = this.state.data;
+        console.log(data1);
 
         fetch('http://localhost:3000/outil1', {
         method: 'DELETE',
@@ -257,10 +258,29 @@ class AdOutil1 extends React.Component{
         
         })
         .then(function (response) {
-            axios({
-                method: 'put',
-                url: 'http://localhost:3000/outil1',
-                data: this.state.data
+            
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+        axios.put('http://localhost:3000/outil1',{ data: data1 }).then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+        /* fetch('http://localhost:3000/outil1', {
+            method: 'PUT',
+            mode:"cors",
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+                "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token",
+                "Content-Type":"application/json"
+            },
+             body: JSON.stringify({jour:"dimanche",taches:10,visible:false})
             })
             .then(function (response) {
                 console.log(response);
@@ -268,13 +288,9 @@ class AdOutil1 extends React.Component{
             .catch(function (error) {
                 console.log(error);
             });
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-
+*/
        
-    }
+    } 
     
 
     render(){
