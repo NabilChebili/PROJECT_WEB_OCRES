@@ -27,7 +27,8 @@ app.put('/', (req, res) => {
         const jourAjt = new outil1({
             jour : dataJ.jour,
             taches : dataJ.taches,
-            visible : dataJ.visible
+            visible : dataJ.visible,
+            numero : dataJ.numero,
         })
         console.log(jourAjt);
         try {

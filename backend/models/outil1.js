@@ -12,7 +12,12 @@ const outil1Schema = new mongoose.Schema({
     visible : {
         type : Boolean,
         required : true,
+    },
+    numero : {
+        type : Number,
+        required : true,
     }
+
 })
 
 module.exports = mongoose.model('outil1',outil1Schema)

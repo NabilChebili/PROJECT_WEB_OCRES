@@ -39,11 +39,20 @@ class Outil1 extends React.Component{
            .then((response) => 
            {
             var data = [];    
-            var dataRecu;
-                dataRecu = response.data.dataO1;
+            var dataRecu = response.data.dataO1;
+
+            dataRecu.sort(function(a, b) {
+                    
+                return a.numero - b.numero;
+                
+            });
+
+            console.log(dataRecu);
+
                 for (let i = 0; i < dataRecu.length; i++) {
                     if(dataRecu[i].visible === true){
-                    data.push({name : dataRecu[i].jour,uv : dataRecu[i].taches,pv: 3, amt: 2400});}
+                        data.push({name : dataRecu[i].jour,uv : dataRecu[i].taches,pv: 3, amt: 2400});
+                    }
                 }
                 this.setState({data:data})
                

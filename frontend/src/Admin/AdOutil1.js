@@ -2,7 +2,7 @@ import React from 'react';
 import './AdOutil1.css';
 
 import axios from 'axios';
-import { Component } from 'react';
+
 
 
 
@@ -19,18 +19,22 @@ class AdOutil1 extends React.Component{
     }
   
     componentDidMount(){
-        var datatemp = [];
+        
         try{
             axios.get('http://localhost:3000/outil1')
             .then((response) => 
             {       
                 var dataRecu;
                 dataRecu = response.data.dataO1;
-                for (let i = 0; i < dataRecu.length; i++) {
-                    if(dataRecu[i].visible === true){
-                        datatemp.push({jour : dataRecu[i].jour,taches : dataRecu[i].taches,visible : dataRecu[i].taches});
-                    }
-                }
+                
+                dataRecu.sort(function(a, b) {
+                    
+                    return a.numero - b.numero;
+                    
+                });
+                
+                
+                
                 this.setState({ data : dataRecu})
             })
             .then(function (response) {

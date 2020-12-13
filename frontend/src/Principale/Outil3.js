@@ -6,6 +6,17 @@ import {
 
 import axios from 'axios';
 
+const CustomTooltip = ({ active, payload, label }) => {
+  if (active) {
+    return (
+      <div className="custom-tooltip">
+        <p  className="label texte">{`${label} : ${payload[0].value}`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
 
 class Outil3 extends React.Component{
 
@@ -28,12 +39,12 @@ class Outil3 extends React.Component{
            .then((response) => 
            {
             var data = [];    
-            var dataRecu;
-                dataRecu = response.data.dataO1;
+            var dataRecu = response.data.dataO1;
+  
                 for (let i = 0; i < dataRecu.length; i++) {
-                    if(dataRecu[i].visible === true){
-                    data.push({name : dataRecu[i].jour,uv : dataRecu[i].taches});}
-                }
+                    
+                    data.push({name : dataRecu[i].name,profit : dataRecu[i].profit});}
+                
                 this.setState({data:data})
                
            })
@@ -41,11 +52,39 @@ class Outil3 extends React.Component{
        catch(err){
            console.log(err);
        }
+       console.log(this.state.data)
+    }
+
+    render() {
+      return (
+        <div>
+        <h5 class="texte">  Profit par mois par employé : </h5>
+        <div style={{ width: '95%', height: 300 }}>
+          <ResponsiveContainer>
+            <BarChart
+              width={800}
+              height={400}
+              data={this.state.data}
+              margin={{
+                top: 5, right: 30, left: 20, bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip content={<CustomTooltip />} />
+              <Legend />
+              <Bar dataKey="profit" barSize={80} fill="#4C50A4" />
+            </BarChart>
+          </ResponsiveContainer>
+          </div>
+        </div>
+      );
     }
 };
 
 
-const data = [
+/* const data = [
   {
     name: 'Jack Danials', profit: 24700,
   },
@@ -68,47 +107,12 @@ const data = [
     name: 'Anku Sour', profit: 53000,
   },
 ];
+ */
 
 
 
-const CustomTooltip = ({ active, payload, label }) => {
-  if (active) {
-    return (
-      <div className="custom-tooltip">
-        <p  className="label texte">{`${label} : ${payload[0].value}`}</p>
-      </div>
-    );
-  }
 
-  return null;
-};
+export default Outil3;
 
-export default class Example extends PureComponent {
+  
 
-  render() {
-    return (
-      <div>
-      <h5 class="texte">  Profit par mois par employé : </h5>
-      <div style={{ width: '95%', height: 300 }}>
-        <ResponsiveContainer>
-          <BarChart
-            width={800}
-            height={400}
-            data={data}
-            margin={{
-              top: 5, right: 30, left: 20, bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip content={<CustomTooltip />} />
-            <Legend />
-            <Bar dataKey="profit" barSize={80} fill="#4C50A4" />
-          </BarChart>
-        </ResponsiveContainer>
-        </div>
-      </div>
-    );
-  }
-}
