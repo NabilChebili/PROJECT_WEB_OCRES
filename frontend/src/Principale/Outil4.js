@@ -34,7 +34,7 @@ class Outil4 extends React.Component{
            {
             console.log(response.data)
             var data = [];    
-            var dataRecu = response.data.data01;
+            var dataRecu = response.data.dataO1;
             console.log(dataRecu);
                 for (let i = 0; i < dataRecu.length; i++) {
                     
