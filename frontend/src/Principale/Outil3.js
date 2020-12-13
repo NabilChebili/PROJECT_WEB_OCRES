@@ -52,7 +52,7 @@ class Outil3 extends React.Component{
        catch(err){
            console.log(err);
        }
-       console.log(this.state.data)
+       
     }
 
     render() {

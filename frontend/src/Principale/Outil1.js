@@ -47,8 +47,6 @@ class Outil1 extends React.Component{
                 
             });
 
-            console.log(dataRecu);
-
                 for (let i = 0; i < dataRecu.length; i++) {
                     if(dataRecu[i].visible === true){
                         data.push({name : dataRecu[i].jour,uv : dataRecu[i].taches,pv: 3, amt: 2400});
