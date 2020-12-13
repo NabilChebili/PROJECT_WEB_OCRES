@@ -1,19 +1,55 @@
 import React, { PureComponent } from 'react';
+import './Outil4.css';
+
 import {
   PieChart, Pie, Tooltip,Cell
 } from 'recharts';
+import axios from 'axios';
 
-const data01 = [
-  { name: 'Moyen-Orient', value: 98000 }, { name: 'Europe', value: 140000 }, 
-  { name: 'Asie', value: 310000 }, { name: 'Amerique', value: 230000 },
-  { name: 'Afrique', value: 63000 }
-];
 
 
 const COLORS = ['#4C50A4', '#6A8DD1', '#7BC6F0', '#8C64E2', '#182850' ];
 
 
-export default class Example extends PureComponent {
+
+class Outil4 extends React.Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            user: "Adrien",
+            data: [],
+        };
+    }
+
+    componentDidMount(){
+        this.retourApi();
+    }
+    
+    retourApi(){
+        try{
+            
+            axios.get('http://localhost:3000/outil4')
+           .then((response) => 
+           {
+            console.log(response.data)
+            var data = [];    
+            var dataRecu = response.data.data01;
+            console.log(dataRecu);
+                for (let i = 0; i < dataRecu.length; i++) {
+                    
+                    data.push({name : dataRecu[i].name,value : dataRecu[i].value});}
+                
+                this.setState({data:data})
+               
+           })
+       }
+       catch(err){
+           console.log(err);
+       }
+    }
+
+
 
   render() {
     return (
@@ -23,7 +59,7 @@ export default class Example extends PureComponent {
                   <Pie
                     dataKey="value" 
                     isAnimationActive={false} 
-                    data={data01} 
+                    data={this.state.data} 
                     cx={185} 
                     cy={160} 
                     outerRadius={120} 
@@ -32,7 +68,7 @@ export default class Example extends PureComponent {
                     >
                   
                     {
-                      data01.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+                      this.state.data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
                     }
                   </Pie>
                   <Tooltip />
@@ -41,3 +77,4 @@ export default class Example extends PureComponent {
     );
   }
 }
+export default Outil4;
