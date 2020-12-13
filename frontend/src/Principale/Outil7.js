@@ -1,17 +1,45 @@
 import React, { PureComponent } from 'react';
 import { RadialBarChart, RadialBar, PolarAngleAxis,} from 'recharts';
+import './Outil7.css';
+import axios from 'axios';
 
-const data = [
-  {
-    name: 'osef', pourcentage: 75,
-  },
-  ];
+
 const COLORS = ['#32CD32'];
 
 
+class Outil7 extends React.Component{
 
+    constructor(props){
+        super(props);
+        this.state = {
+            user: "Adrien",
+            data: [],
+        };
+    }
 
-export default class Example extends PureComponent {
+    componentDidMount(){
+        this.retourApi();
+    }
+    
+    retourApi(){
+        try{
+            
+            axios.get('http://localhost:3000/outil7')
+           .then((response) => 
+           {
+            console.log(response.data)   
+            var data = [];
+            data.push({pourcentage : response.data.dataO1[0].pourcentage});
+            this.setState({data:data})
+            console.log(data)
+               
+           })
+       }
+       catch(err){
+           console.log(err);
+       }
+    }
+
 
   render() {
     return (
@@ -24,7 +52,7 @@ export default class Example extends PureComponent {
         cy={130} 
         innerRadius={80} 
         barSize={35} 
-        data={data}
+        data={this.state.data}
         fill={COLORS} 
       >
 
@@ -46,3 +74,4 @@ export default class Example extends PureComponent {
     );
   }
 }
+export default Outil7;
