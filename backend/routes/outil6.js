@@ -24,7 +24,7 @@ app.put('/', (req, res) => {
 
         const dataJ = dataO1;
         const jaugeAjt = new outil6({
-            chartValue : dataJ.chartValue,
+            chartValue : dataJ.chartValue*2,
 
         })
         console.log(jaugeAjt);
