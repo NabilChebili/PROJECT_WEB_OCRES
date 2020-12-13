@@ -3,7 +3,7 @@ var app = express();
 const outil4 = require('../models/outil4')
 
 const cors = require('cors')
-app.use(cors()) 
+app.use(cors())
 
 /* GET users listing. */
 app.get('/', async (req, res) => {
