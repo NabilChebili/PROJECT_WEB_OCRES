@@ -21,23 +21,23 @@ app.get('/', async (req, res) => {
 /* PUT users listing. */
 app.put('/', (req, res) => {
     const dataO1 = req.body.data;
+    
+    const dataJ = dataO1[0];
+    const jaugeAjt = new outil6({
+        chartValue : dataJ.chartValue*2,
 
-        const dataJ = dataO1;
-        const jaugeAjt = new outil6({
-            chartValue : dataJ.chartValue*2,
-
-        })
-        console.log(jaugeAjt);
-        try {
-            const newJauge = jaugeAjt.save();
-            res.status(201);
-        } catch (error) {
-            res.status(400).json({message: error.message})
-        }
-        
+    })
+    try {
+        const newJauge = jaugeAjt.save();
+        res.status(201);
+    } catch (error) {
+        res.status(400).json({message: error.message})
+    }
     res.status(200).json({
-        message:`Le pourcentage`
+        message:`Charvalue ajoutée`
     });
+        
+    
     
     
     

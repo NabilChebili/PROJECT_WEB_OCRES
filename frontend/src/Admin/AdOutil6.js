@@ -23,6 +23,7 @@ class AdOutil6 extends React.Component{
             {       
                 var dataRecu;
                 dataRecu = response.data.dataO1;
+                console.log(response.data.dataO1)
                 
                 this.setState({ data : dataRecu})
             })
@@ -43,7 +44,7 @@ class AdOutil6 extends React.Component{
 
     change(){
         let dataTemp = this.state.data;
-        dataTemp.chartValue = document.getElementById("chartValueChange").value;
+        dataTemp[0].chartValue = document.getElementById("chartValueChange").value;
                 fetch('http://localhost:3000/outil6', {
                     method: 'DELETE',
                     mode:"cors",
@@ -60,9 +61,10 @@ class AdOutil6 extends React.Component{
                 })
                 .catch(function (error) {
                     console.log(error);
-                });
+                }); 
 
-                axios.put('http://localhost:3000/outil6',{ data: dataTemp }).then(function (response) {
+                axios.put('http://localhost:3000/outil6',{ data: dataTemp })
+                .then(function (response) {
                     console.log(response);
                 })
                 .catch(function (error) {
@@ -83,7 +85,7 @@ class AdOutil6 extends React.Component{
             <text class="text">Pourcentage :</text>
             <input class="text" type="number" id="chartValueChange" min="0" max="100"/>%
             <br></br>
-            <input type="" value="Envoyer" onClick={() => this.change()}/>
+            <input type="submit" value="Envoyer" onClick={() => this.change()}/>
             </form>
             </div>
         );
