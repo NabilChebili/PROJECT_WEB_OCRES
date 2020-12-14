@@ -41,10 +41,9 @@ class AdOutil7 extends React.Component{
        
     }
     change(){
+
         let dataTemp = this.state.data;
-        for (let i = 0; i < dataTemp.length; i++) {
-            {
-                dataTemp[i].pourcentage = document.getElementById("pourcentageChange").value;
+        dataTemp[0].pourcentage = document.getElementById("pourcentageChange").value;
                 fetch('http://localhost:3000/outil7', {
                     method: 'DELETE',
                     mode:"cors",
@@ -61,16 +60,15 @@ class AdOutil7 extends React.Component{
                 })
                 .catch(function (error) {
                     console.log(error);
-                });
+                }); 
 
-                axios.put('http://localhost:3000/outil7',{ data: dataTemp }).then(function (response) {
+                axios.put('http://localhost:3000/outil7',{ data: dataTemp })
+                .then(function (response) {
                     console.log(response);
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
-            }
-        }
     }
         
        

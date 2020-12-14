@@ -22,10 +22,9 @@ app.get('/', async (req, res) => {
 app.put('/', (req, res) => {
     const dataO1 = req.body.data;
 
-        const dataJ = dataO1;
+        const dataJ = dataO1[0];
         const pourcentageAjt = new outil7({
             pourcentage : dataJ.pourcentage,
-            name : dataJ.name,
 
 
         })
