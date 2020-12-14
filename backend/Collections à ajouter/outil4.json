@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "5fd67a329f1c4a523cfad262"
+  },
+  "name": "Europe",
+  "value": 140000,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fd67a329f1c4a523cfad263"
+  },
+  "name": "Afrique",
+  "value": 63000,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fd67a329f1c4a523cfad264"
+  },
+  "name": "Moyen-Orient",
+  "value": 98000,
+  "__v": 0
+}]

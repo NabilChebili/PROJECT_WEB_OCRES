@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "5fd6471cf563d93bd8f1a186"
+  },
+  "name": "bac",
+  "profit": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5fd6471cf563d93bd8f1a187"
+  },
+  "name": "jon",
+  "profit": 20,
+  "__v": 0
+}]
